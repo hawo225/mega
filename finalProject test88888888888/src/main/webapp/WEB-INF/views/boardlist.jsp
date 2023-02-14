@@ -103,7 +103,7 @@ li.a {
 							홈</a></li>
 
 					<li><a href="http://localhost:80/movie/list" title="공지사항">공지사항</a></li>
-					<li><a href="http://localhost:80/movie/created2" title="1:1문의">1:1문의</a></li>
+					<li><a href="http://localhost:80/movie/created" title="1:1문의">1:1문의</a></li>
 					<li class="on"><a href="http://localhost:80/movie/boardlist"
 						title="게시판">게시판</a></li>
 
@@ -264,7 +264,7 @@ li.a {
 							<!--  게시판 페이징 -->
 
 							<div class="btn-group right">
-								<a href="http://localhost:80/movie/created"
+								<a href="http://localhost:80/movie/created2"
 									class="button purple" id="myQnaBtn" title="게시판으로 이동">게시판 작성</a>
 								<!-- btn-layer-open -->
 							</div>

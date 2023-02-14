@@ -306,7 +306,7 @@ $(function(){
 		</ul>
 
 		<div class="btn-group right">
-			<a href="http://localhost:80/movie/created2" class="button" id="inqBtn" title="1:1 문의하기">1:1 문의하기</a>
+			<a href="http://localhost:80/movie/created" class="button" id="inqBtn" title="1:1 문의하기">1:1 문의하기</a>
 		</div>
 	</div>
 

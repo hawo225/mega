@@ -78,7 +78,7 @@ public class BoardConrtroller {
 		
 		boardService.insertData(dto);
 		
-		mav.setViewName("redirect:/list");
+		mav.setViewName("redirect:/movie/list");
 		
 		return mav;
 		
@@ -108,12 +108,6 @@ public class BoardConrtroller {
 			}
 		}
 		
-		
-		
-		
-		
-		
-		
 		int dataCount = boardService.getDataCount(searchKey, searchValue);
 		
 		int numPerPage = 10;
@@ -133,8 +127,8 @@ public class BoardConrtroller {
 			param = "searchKey=" + searchKey;
 			param+= "&searchValue=" + URLEncoder.encode(searchValue, "UTF-8");
 		}
-		
-		String listUrl = "movie/list";
+		// String listUrl = "/list";로 되어 있으면 리스트에서 페이지 확인이 안됨 -> String listUrl = "/movie/list"로 변경
+		String listUrl = "/movie/list";
 		
 		if(!param.equals("")) {
 			listUrl += "?" + param;
@@ -148,7 +142,14 @@ public class BoardConrtroller {
 			articleUrl += "&" + param;
 		}
 		
+		/*
+		request.setAttribute("lists", lists);
+		request.setAttribute("articleUrl", articleUrl);
+		request.setAttribute("pageIndexList", pageIndexList);
+		request.setAttribute("dataCount", dataCount);
 		
+		return "bbs/list";
+		*/
 		//ModelAndView로 전송
 		ModelAndView mav = new ModelAndView();
 		
@@ -162,112 +163,60 @@ public class BoardConrtroller {
 		return mav;
 	}
 	
-	
-	// 공지사항 리스트
-		@RequestMapping(value = "/boardlist", 
-				method = {RequestMethod.GET,RequestMethod.POST})
-		public ModelAndView boardlist(BoardDTO dto, HttpServletRequest request) throws Exception{
-			
-			String pageNum = request.getParameter("pageNum");//문자만 따온건가?
+	//공지사항 게시글
+	@RequestMapping(value = "/article", 
+			method = {RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView article(HttpServletRequest request) throws Exception{
+		
+		int num = Integer.parseInt(request.getParameter("num"));
+		String pageNum = request.getParameter("pageNum");
 
-			int currentPage = 1;
-			
-			if(pageNum!=null)
-				currentPage = Integer.parseInt(pageNum);
-			
-			String searchKey = request.getParameter("searchKey");
-			String searchValue = request.getParameter("searchValue");
-			
-			if(searchValue==null) {
-				searchKey = "subject";
-				searchValue = "";
-			}else {
-				if(request.getMethod().equalsIgnoreCase("GET")) {
-					searchValue = URLDecoder.decode(searchValue, "UTF-8");
-				}
-			}
-			
-			
-			
-			
-			
-			
-			
-			int dataCount = boardService.getDataCount(searchKey, searchValue);
-			
-			int numPerPage = 10;
-			int totalPage = myUtil.getPageCount(numPerPage, dataCount);
-			
-			if(currentPage>totalPage)
-				currentPage = totalPage;
-			
-			int start = (currentPage-1)*numPerPage+1; // 1 6 11 16
-			int end = currentPage*numPerPage;
-			
-			List<BoardDTO> boardlist = boardService.getLists(start, end, searchKey, searchValue);
-			
-			String param = "";
-			
-			if(searchValue!=null&&!searchValue.equals("")) { //널을 찾아내지 못하는경우가 있기때문에 양쪽에 부정문을 써준다.
-				param = "searchKey=" + searchKey;
-				param+= "&searchValue=" + URLEncoder.encode(searchValue, "UTF-8");
-			}
-			
-			String listUrl = "movie/boardlist";
-			
-			if(!param.equals("")) {
-				listUrl += "?" + param;
-			}
+		String searchKey = request.getParameter("searchKey");
+		String searchValue = request.getParameter("searchValue");
 
-			String pageIndexList = myUtil.pageIndexList(currentPage, totalPage, listUrl);
-			
-			String articleUrl = "/movie/article?pageNum=" + currentPage;
-			
-			if(!param.equals("")) {
-				articleUrl += "&" + param;
-			}
-			
-			
-			//ModelAndView로 전송
-			ModelAndView mav = new ModelAndView();
-			
-			mav.addObject("boardlist", boardlist);
-			mav.addObject("articleUrl", articleUrl);
-			mav.addObject("pageIndexList", pageIndexList);
-			mav.addObject("dataCount", dataCount);
-			
-			mav.setViewName("notice/boardlist");
-			
-			return mav;
+		if(searchValue!=null) {
+			searchValue = URLDecoder.decode(searchValue, "UTF-8");
+
 		}
-	
-	
-	
-	// 공지사항 리스트
-		@RequestMapping(value = "/article", 
-				method = {RequestMethod.GET,RequestMethod.POST})
-		public ModelAndView article(BoardDTO dto, HttpServletRequest request) throws Exception{
-			
-			String searchKey = request.getParameter("searchKey");
-			String searchValue = request.getParameter("searchValue");
-			
-			if(searchValue==null) {
-				searchKey = "subject";
-				searchValue = "";
-			}else {
-				if(request.getMethod().equalsIgnoreCase("GET")) {
-					searchValue = URLDecoder.decode(searchValue, "UTF-8");
-				}
-			}
-			
-			//ModelAndView로 전송
+
+		boardService.updateHitCount(num);
+
+		//전체데이터 읽어오기
+		BoardDTO dto = boardService.getReadData(num);
+
+		if(dto==null) {
 			ModelAndView mav = new ModelAndView();
-			
-			
-			mav.setViewName("notice/article");
-			
+			mav.setViewName("redirect:/list?pageNum=" + pageNum);
 			return mav;
+
 		}
+
+		int lineSu = dto.getContent().split("\n").length;
+
+		//dto.setContent(dto.getContent().replaceAll( "<br/>", "\r\n"));
+
+		String param = "pageNum=" + pageNum;
+		if(searchValue!=null&&!searchValue.equals("")) {
+
+			param += "&searchKey=" + searchKey;
+			param += "&searchValue=" +
+					URLEncoder.encode(searchValue, "UTF-8");
+
+		}
+
+
+		ModelAndView mav = new ModelAndView();
+
+		mav.addObject("dto", dto);
+		mav.addObject("params", param);
+		mav.addObject("lineSu", lineSu);
+		mav.addObject("pageNum", pageNum);
+
+		mav.setViewName("notice/article");
+
+		return mav;
+		
+	}
 	
 	//공지사항 게시글 수정_acticle에서 들어감
 	@RequestMapping(value = "/updated", 

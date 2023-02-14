@@ -77,7 +77,7 @@ String cp = request.getContextPath();
 		}
 		f.pwd.value = str;
 		
-		f.action = "<%=cp%>/movie/created2";
+		f.action = "<%=cp%>/movie/created";
 		f.submit();
 		
 	}
@@ -373,7 +373,7 @@ String cp = request.getContextPath();
 					
 					<li><a href="http://localhost/movie/list"
 						title="공지사항">공지사항</a></li>
-					<li><a href="http://localhost/movie/created2"
+					<li><a href="http://localhost/movie/created"
 						title="1:1문의">1:1문의</a></li>
 				
 				</ul>
@@ -476,7 +476,7 @@ String cp = request.getContextPath();
 								홈</a></li>
 						<li><a href="http://localhost:80/movie/list"
 							title="공지사항">공지사항</a></li>
-						<li><a href="http://localhost:80/movie/created2" title="1:1문의">1:1문의</a></li>
+						<li><a href="http://localhost:80/movie/created" title="1:1문의">1:1문의</a></li>
 						<li><a href="http://localhost:80/boardlist" title="게시판">게시판</a></li>
 					</ul>
 
