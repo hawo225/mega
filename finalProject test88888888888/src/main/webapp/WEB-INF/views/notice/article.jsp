@@ -91,7 +91,7 @@ String cp = request.getContextPath();
 	<!-- header -->
 	<header id="header">
 	<h1 class="ci">
-		<a href="http://localhost:80/main" title="MEGABOX 메인으로 가기">MEGABOX
+		<a href="http://localhost:8080/main" title="MEGABOX 메인으로 가기">MEGABOX
 			: Life Theater</a>
 	</h1>
 
@@ -104,7 +104,7 @@ String cp = request.getContextPath();
 			<a href="https://www.megabox.co.kr/benefit/viplounge"
 				title="VIP LOUNGE">VIP LOUNGE</a> <a
 				href="https://www.megabox.co.kr/benefit/membership" title="멤버십">멤버십</a>
-			<a href="http://localhost:80/movie/list" title="고객센터">고객센터</a>
+			<a href="http://localhost:8080/movie/list" title="고객센터">고객센터</a>
 		</div>
 
 		<div class="right-link">
@@ -158,7 +158,7 @@ String cp = request.getContextPath();
 						title="무비포스트">무비포스트</a></li>
 				</ul>
 			</div></li>
-		<li><a href="http://localhost:80/booking_1"
+		<li><a href="http://localhost:8080/booking_1"
 			class="gnb-txt-reserve" title="예매">예매</a>
 			<div class="gnb-depth2">
 				<ul>
@@ -469,15 +469,15 @@ String cp = request.getContextPath();
 				<div class="lnb-area addchat location-fixed">
 					<nav id="lnb">
 					<p class="tit">
-						<a href="http://localhost:80/movie/article" title="고객센터">고객센터</a>
+						<a href="http://localhost:8080/movie/article" title="고객센터">고객센터</a>
 					</p>
 					<ul>
 						<li class="on"><a href="http://localhost/movie/article" title="고객센터 홈">고객센터
 								홈</a></li>
-						<li><a href="http://localhost:80/movie/list"
+						<li><a href="http://localhost:8080/movie/list"
 							title="공지사항">공지사항</a></li>
-						<li><a href="http://localhost:80/movie/created" title="1:1문의">1:1문의</a></li>
-						<li><a href="http://localhost:80/boardlist" title="게시판">게시판</a></li>
+						<li><a href="http://localhost:8080/movie/created" title="1:1문의">1:1문의</a></li>
+						<li><a href="http://localhost:8080/boardlist" title="게시판">게시판</a></li>
 					</ul>
 
 					<!-- 고객센터 메뉴일때만 출력 -->

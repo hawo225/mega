@@ -74,13 +74,13 @@ String cp = request.getContextPath();
 					<a href="https://www.megabox.co.kr/support" title="고객센터">고객센터</a>
 				</p>
 				<ul>
-					<li><a href="http://localhost:80/movie/article" title="고객센터 홈">고객센터
+					<li><a href="http://localhost:8080/movie/article" title="고객센터 홈">고객센터
 							홈</a></li>
 
-					<li class="on"><a href="http://localhost:80/movie/list"
+					<li class="on"><a href="http://localhost:8080/movie/list"
 						title="공지사항">공지사항</a></li>
-					<li><a href="http://localhost:80/movie/created" title="1:1문의">1:1문의</a></li>
-					<li><a href="http://localhost:80/boardlist" title="게시판">게시판</a></li>
+					<li><a href="http://localhost:8080/movie/created" title="1:1문의">1:1문의</a></li>
+					<li><a href="http://localhost:8080/boardlist" title="게시판">게시판</a></li>
 
 				</ul>
 

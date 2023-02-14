@@ -47,7 +47,7 @@
 		<span>Home</span>
 		<a href="https://www.megabox.co.kr/mypage" title="나의 메가박스 페이지로 이동">나의 메가박스</a>
 		<a href="https://www.megabox.co.kr/mypage/myinquiry" title="나의 문의내역 페이지로 이동">나의 문의내역</a>
-	<a href="http://localhost:80/movie/list2" title="1:1 문의내역 페이지로 이동">1:1 문의내역</a></div></div>
+	<a href="http://localhost:8080/movie/created" title="1:1 문의내역 페이지로 이동">1:1 문의내역</a></div></div>
             </div>
 
             <div class="inner-wrap">
@@ -306,7 +306,7 @@ $(function(){
 		</ul>
 
 		<div class="btn-group right">
-			<a href="http://localhost:80/movie/created" class="button" id="inqBtn" title="1:1 문의하기">1:1 문의하기</a>
+			<a href="http://localhost:8080/movie/created" class="button" id="inqBtn" title="1:1 문의하기">1:1 문의하기</a>
 		</div>
 	</div>
 

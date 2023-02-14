@@ -261,7 +261,7 @@
 										
 											<a href="#">상세정보</a>
 											
-											<a href="http://localhost:80/booking_1">예매하기</a>
+											<a href="http://localhost:8080/booking_1">예매하기</a>
 											<!-- 클릭 시 booking_1 (예매)로 이동(현우)  --> 
 										</div>
 									</div>

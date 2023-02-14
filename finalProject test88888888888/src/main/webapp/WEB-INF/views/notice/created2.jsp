@@ -105,7 +105,7 @@ String cp = request.getContextPath();
 	<!-- header -->
 	<header id="header">
 	<h1 class="ci">
-		<a href="http://localhost:80/main" title="MEGABOX 메인으로 가기">MEGABOX
+		<a href="http://localhost:8080/main" title="MEGABOX 메인으로 가기">MEGABOX
 			: Life Theater</a>
 	</h1>
 
@@ -666,8 +666,8 @@ String cp = request.getContextPath();
 					<li><a href="http://localhost/movie/article" title="고객센터 홈">고객센터
 							홈</a></li>
 					<li><a href="http://localhost/movie/list" title="공지사항">공지사항</a></li>
-					<li><a href="http://localhost:80/movie/created2" title="1:1문의">1:1문의</a></li>
-					<li class="on"><a href="http://localhost:80/boardlist"
+					<li><a href="http://localhost:8080/movie/created2" title="1:1문의">1:1문의</a></li>
+					<li class="on"><a href="http://localhost:8080/boardlist"
 						title="게시판">게시판</a></li>
 				</ul>
 

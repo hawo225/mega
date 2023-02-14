@@ -87,7 +87,7 @@
 
 <!-- header 메인 경로 지정 -->
 <header id="header">
-    <h1 class="ci"><a href="http://localhost:80/main" title="MEGABOX 메인으로 가기">MEGABOX : Life Theater</a></h1>
+    <h1 class="ci"><a href="http://localhost:8080/main" title="MEGABOX 메인으로 가기">MEGABOX : Life Theater</a></h1>
 
 	
 
@@ -96,7 +96,7 @@
         <div class="left-link">
             <a href="https://www.megabox.co.kr/benefit/viplounge" title="VIP LOUNGE">VIP LOUNGE</a>
             <a href="https://www.megabox.co.kr/benefit/membership" title="멤버십">멤버십</a>
-            <a href="http://localhost:80/movie/list" title="고객센터">고객센터</a>
+            <a href="http://localhost:8080/movie/list" title="고객센터">고객센터</a>
         </div>
 
         <div class="right-link">
@@ -156,7 +156,7 @@
                     </ul>
                 </div>
             </li>
-            <li><a href="http://localhost:80/booking_1" class="gnb-txt-reserve" title="예매">예매</a>
+            <li><a href="http://localhost:8080/booking_1" class="gnb-txt-reserve" title="예매">예매</a>
                 <div class="gnb-depth2">
                     <ul>
                         <li><a href="https://www.megabox.co.kr/booking" title="빠른예매">빠른예매</a></li>
@@ -499,8 +499,8 @@
 			<div class="inner-wrap">
 				<div class="location">
 					<span>Home</span>
-					<a href="http://localhost:80/movie/article" title="고객센터 페이지로 이동">고객센터</a>
-					<a href="http://localhost:80/movie/list" title="공지사항 페이지로 이동">공지사항</a>
+					<a href="http://localhost:8080/movie/article" title="고객센터 페이지로 이동">고객센터</a>
+					<a href="http://localhost:8080/movie/list" title="공지사항 페이지로 이동">공지사항</a>
 				</div>
 
 			</div>
@@ -509,13 +509,13 @@
 		<div class="inner-wrap">
 			<div class="lnb-area addchat location-fixed">
 				<nav id="lnb">
-					<p class="tit"><a href="http://localhost:80/movie/article" title="고객센터">고객센터</a></p>
+					<p class="tit"><a href="http://localhost:8080/movie/article" title="고객센터">고객센터</a></p>
 					<ul>
-						<li><a href="http://localhost:80/movie/article" title="고객센터 홈">고객센터 홈</a></li>
+						<li><a href="http://localhost:8080/movie/article" title="고객센터 홈">고객센터 홈</a></li>
 						
-						<li ><a href="http://localhost:80/movie/list" title="공지사항">공지사항</a></li>
-						<li class="on"><a href="http://localhost:80/movie/created2" title="1:1문의">1:1문의</a></li>
-						<li><a href="http://localhost:80/boardlist" title="게시판">게시판</a></li>
+						<li ><a href="http://localhost:8080/movie/list" title="공지사항">공지사항</a></li>
+						<li class="on"><a href="http://localhost:8080/movie/created2" title="1:1문의">1:1문의</a></li>
+						<li><a href="http://localhost:8080/boardlist" title="게시판">게시판</a></li>
 						
 					</ul>
 
@@ -539,7 +539,7 @@
 					</ul>
 
 					<div class="btn-group right">
-						<a href="http://localhost:80/movie/list2" class="button purple" id="myQnaBtn" title="나의 문의내역 페이지로 이동">나의 문의내역</a><!-- btn-layer-open -->
+						<a href="http://localhost:8080/movie/list2" class="button purple" id="myQnaBtn" title="나의 문의내역 페이지로 이동">나의 문의내역</a><!-- btn-layer-open -->
 					</div>
 				</div>
 				
@@ -629,7 +629,7 @@
 											
 												<option value="70">강원</option>
 											
-												<option value="80">제주</option>
+												<option value="8080">제주</option>
 											
 										</select><button type="button" class="btn dropdown-toggle btn-default bs-placeholder" data-toggle="dropdown" role="button" data-id="theater" title="지역선택"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">지역선택</div></div> </div><span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><div class="inner open" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner "></ul></div></div></div>
 										<div class="dropdown bootstrap-select disabled small ml10 bs3"><select name="brchNo" id="theater02" class="small ml10" title="극장선택" disabled="disabled" tabindex="-98"><option class="bs-title-option" value=""></option>
